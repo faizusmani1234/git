@@ -69,6 +69,11 @@ Shortlog will attempt to parse each trailer value as a `name <email>`
 identity. If successful, the mailmap is applied and the email is omitted
 unless the `--email` option is specified. If the value cannot be parsed
 as an identity, it will be taken literally and completely.
++
+If `--group` is specified multiple times, commits are counted under each
+value (but again, only once per unique value in that commit). For
+example, `git shortlog --group=author --group=trailer:co-authored-by`
+counts both authors and co-authors.
 
 -c::
 --committer::
